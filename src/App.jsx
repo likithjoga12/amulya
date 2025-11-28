@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import Taskform from './components/Taskform';
-import TaskList from './components/Tasklist';
-import Progresstracker from './components/Progresstracker';
+import Taskform from './components/TaskForm';
+import TaskList from './components/TaskList';
+import Progresstracker from './components/ProgressTracker';
 import './App.css';
 
 export default function App() {
@@ -42,7 +42,7 @@ export default function App() {
         <p>Your friendly Task Manager</p>
       </header>
 
-        <Taskform addTask={addTask} />
+        <TaskForm addTask={addTask} />
 
         <TaskList 
             tasks={tasks} 
@@ -50,7 +50,7 @@ export default function App() {
             updateTask={updateTask} 
             deleteTask={deleteTask} 
         />
-        <Progresstracker tasks={tasks} />
+        <ProgressTracker tasks={tasks} />
 
         {tasks.length > 0 && (
           <button className="clear" onClick={clearTasks}>
